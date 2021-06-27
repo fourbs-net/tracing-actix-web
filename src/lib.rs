@@ -244,5 +244,5 @@ pub use root_span_builder::{DefaultRootSpanBuilder, RootSpanBuilder};
 #[doc(hidden)]
 pub mod root_span_macro;
 
-#[cfg(feature = "opentelemetry_0_13")]
+#[cfg(feature = "otel")]
 mod otel;

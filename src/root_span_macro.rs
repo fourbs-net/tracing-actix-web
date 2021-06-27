@@ -116,13 +116,13 @@ pub mod private {
 
     pub use tracing;
 
-    #[cfg(not(feature = "opentelemetry_0_13"))]
+    #[cfg(not(feature = "otel"))]
     #[doc(hidden)]
     pub fn set_otel_parent(_req: &ServiceRequest, _span: &tracing::Span) {
         // No-op if the OpenTelemetry feature is not active
     }
 
-    #[cfg(feature = "opentelemetry_0_13")]
+    #[cfg(feature = "otel")]
     #[doc(hidden)]
     pub fn set_otel_parent(req: &ServiceRequest, span: &tracing::Span) {
         use opentelemetry::trace::TraceContextExt as _;
