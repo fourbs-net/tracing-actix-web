@@ -27,14 +27,21 @@ emit_event_on_error = []
 actix-web = "=4.0.0-beta.8"
 actix-http = "=3.0.0-beta.8"
 actix-service = "^2.0.0"
-tracing = "0.1"
-tracing-futures = "0.2"
+tracing = "0.2"
+tracing-futures = "0.3"
 futures = "0.3"
 uuid = { version = "0.8", features = ["v4"] }
-opentelemetry = { version = "0.14", optional = true }
-tracing-opentelemetry = { version = "0.13", optional = true }
+opentelemetry = { version = "0.15", optional = true }
+tracing-opentelemetry = { version = "0.14", optional = true }
 
 [dev-dependencies]
-tracing-subscriber = { version = "0.2", features = ["registry", "env-filter"] }
+tracing-subscriber = { version = "0.3", features = ["registry", "env-filter"] }
 tracing-bunyan-formatter = "0.2"
-tracing-log = "0.1.1"
+tracing-log = "0.2.0"
+
+[patch.crates-io]
+tracing = { git = 'https://github.com/tokio-rs/tracing.git', branch = 'master' }
+tracing-log = { git = 'https://github.com/tokio-rs/tracing.git', branch = 'master' }
+tracing-futures = { git = 'https://github.com/tokio-rs/tracing.git', branch = 'master' }
+tracing-subscriber = { git = 'https://github.com/tokio-rs/tracing.git', branch = 'master' }
+tracing-opentelemetry = { git = 'https://github.com/tokio-rs/tracing.git', branch = 'master' }
